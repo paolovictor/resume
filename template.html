@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+	<title>Paolo Victor | Software Engineer | paolovictor@gmail.com</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
+
+</head>
+<body>
+
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+					<h1>{{ basic["name"] }}</h1>
+					<h2>{{ basic["trade"] }}</h2>
+				</div>
+
+				<div class="yui-u">
+					<div class="contact-info">
+						<h3><a href="{{ basic['url'] }}">{{ basic['url']}}</a></h3>
+						<h3><a href="mailto:{{ basic['email'] }}">{{ basic['email'] }}</a></h3>
+						<h3>{{ basic['phone'] }}</h3>
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h3>The {{ cover_letter_count }}-word cover letter</h3>
+						</div>
+						<div class="yui-u">
+							<p class="enlarge">
+								{{ basic['cover'] }}
+							</p>
+						</div>
+					</div>
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Technical</h2>
+						</div>
+						<div class="yui-u last">
+							<ul class="talent" style="width:100%">
+								<li class="last">{{ ', '.join(buzzword_soup) }}</li>
+							</ul>
+						</div>
+					</div><!--// .yui-gf-->
+
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Experience</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+							{% for exp in experience %}
+							<div class="job last">
+								<h3><a href="{{ exp['url'] }}">{{ exp['where'] }}</a></h3>
+								<h3>{{ exp['what'] }}</h3>
+								<h4>{{ exp['when'] }}</h4>
+								<p>{{ exp['description'] }}</p>
+							</div>
+							{% endfor %}
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Education</h2>
+						</div>
+						<div class="yui-u">
+							{% for edu in education %}
+								<div class="job last">
+    							<h2>{{ edu['title'] }} in {{ edu['area'] }}</h2>
+               				    <h4>{{ edu['when'] }}</h4>
+    							<p>{{ edu['where'] }}<br>
+
+								{% if 'work_title' in edu %}
+									{{ edu['work_title'] }}<br>
+								{% endif %}
+
+								{% if 'advisor' in edu %}
+									{{ edu['advisor'] }}
+								{% endif %}
+								</div>
+							{% endfor %}
+						</div>
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Published works</h2>
+						</div>
+
+						{% for pub in publications %}
+							<div class="yui-u last">
+								<h2>{{ pub['title'] }}</h2>
+								{% if 'title_alt' in pub %}
+									<h3>{{ pub['title_alt'] }}</h3>
+								{% endif %}
+	           				    <p>{{ pub['authors'] }}</p>
+								<p>{{ pub['where'] }}</p>
+								<br>
+							</div>
+						{% endfor %}
+					</div><!--// .yui-gf -->
+
+					<div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Also...</h2>
+						</div>
+
+						<div class="yui-u last">
+							<ul class="talent" style="width: 90%">
+                                <li>I've competed on ACM Regional Programming Contests. I've placed 3rd in 2005 and 2nd in 2007</li>
+                                <li>I like to keep both sides of my brain active: I draw and occasionally play guitar</li>
+                                <li class="last">By the way, what's your <a href="http://www.joelonsoftware.com/articles/fog0000000043.html">Joel Test</a> score?</li>
+                            </ul>
+						</div>
+					</div><!--// .yui-gf -->
+
+					<div id="ft">
+						<p>This resume was generated automatically. Check out <a href='https://github.com/paolovictor/resume'>https://github.com/paolovictor/resume</a> to see how!</p>
+					</div>
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+	</div><!-- // inner -->
+
+
+</div><!--// doc -->
+
+
+</body>
+</html>
+
