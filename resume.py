@@ -2,7 +2,7 @@
 # coding: utf-8
 
 basic = {
-    'name': u'Paolo Soares',
+    'name': u'Paolo Victor',
     'trade': u'Software engineer',
     'email': u'paolovictor@gmail.com',
     'phone': u'+55 48 96883508',
